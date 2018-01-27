@@ -1,0 +1,48 @@
+<div class="sirius-list-box" 
+			on:click='onSelectItem(event)'
+			on:keydown='onKeyDown(event)'
+			ref:js_listbox
+			:multiple
+			on:blur="fire('blur')"
+			:tabIndex>
+	<slot>
+		{{#each items as item, i}}
+			<ListItem ind="{{i}}">{{item}}</ListItem>
+		{{/each}}
+	</slot>
+</div>
+
+<script>
+	import ListItem from './list-item.html'
+
+	export default {
+		oncreate() {
+			this.selectors = {
+				cursor: 'sirius-list-cursor',
+				selected: 'sirius-list-selected',
+				list_item: 'sirius-list-item'
+			};
+			this.cursorPos = -1;
+    },
+		data(){
+			return {
+				multiple: false,
+				items: [],
+				select: '',
+				tabIndex: 0
+			}
+		},
+		components: {
+			ListItem
+		},
+		methods:{
+			onSelectItem:function(event){
+				jSvelte.List.onSelectItem.call(this,event);
+			},
+			onKeyDown: function(event){
+				jSvelte.List.onKeyDown.call(this,event);
+			}
+		}
+	}
+</script>
+

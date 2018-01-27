@@ -1,0 +1,52 @@
+	.sirius-select{
+		display:block;
+		width:189px;
+		border: solid 1px lightgray;
+		height:15px;
+		outline: none;		
+	}
+	.sirius-select:focus{
+		border: 1px solid #80a0d8;
+		box-shadow: 0 0 10px #9ecaed;
+	}
+	:global(.sirius-focus){
+		border: 1px solid #80a0d8 !important;
+		box-shadow: 0 0 10px #9ecaed;
+	}
+	
+	.sirius-select-filter{
+		border: none;
+		height: 100%;
+		width: calc(100% - 17px);
+		font-size: 12px;
+		padding: 1px 4px 1px 4px;
+		outline: none;
+		background-color: white;
+		float:left;
+		padding:0;
+		margin:0;
+	}
+	.sirius-select-btn{
+		float:left;
+		height: 100%;
+		text-align: center;
+		width: 16px;
+		background-color: rgb(241, 240, 240);
+		border-left: solid 1px lightgray;
+	}
+	.sirius-select-btn span{
+		-webkit-user-select: none;
+		pointer-events: none;
+		color:#736464;
+		position: relative;
+		top: -2px;
+	}
+	.sirius-select-btn:hover{
+		background-color: rgb(202, 200, 200);
+		cursor: pointer;
+	}
+	.sirius-select-list{
+		position: absolute;
+	}
+	
+

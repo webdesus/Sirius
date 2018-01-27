@@ -1,0 +1,24 @@
+	:global(.sirius-list-item){
+		font-size:12px;
+	}
+	.sirius-list-box{
+		display: block;
+		background-color: white;
+		width: 189px;
+		border: solid 1px lightgray;
+	}
+	.sirius-list-box:focus{
+		outline: none;
+		border: 1px solid #80a0d8;
+		box-shadow: 0 0 10px #9ecaed;
+	}
+	:global(.sirius-list-selected){
+		background-color: #99b4d1;
+	}
+	:global(.sirius-list-cursor){
+		background-color: #99b4d1;
+	}
+	:global([multiple="true"] .sirius-list-cursor){
+		background-color: lightgray;
+	}
+

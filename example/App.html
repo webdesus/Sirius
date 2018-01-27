@@ -1,0 +1,26 @@
+<h1>select</h1>
+<Select items="{{test2}}"/>
+
+<h1>listbox</h1>
+<List items="{{test}}"/>
+<br>
+<List multiple items="{{test}}"/>
+
+<script>
+	// import Select from './compoments/select/select.html'
+	import List from '../src/list.html'
+	import Select from '../src/select.html'
+	export default {
+		data(){
+			return{
+				test:[1,2,3],
+				test2:['test1','test2','test3']
+			}
+		},
+		components: {
+			List,
+			Select
+		}
+	};
+</script>
+

@@ -1,0 +1,110 @@
+<div class="sirius-select" 
+			ref:js_select
+			on:keydown='onKeyDown(event)'
+			on:blur="onBlurFilter()">
+
+			<input class="sirius-select-filter" 
+							type="text" 
+							ref:js_select_input
+							on:focus="onFocusFilter()"
+							on:blur="onBlurFilter()"
+							on:keyup="onKeyUp()"
+							bind:value="display"/>
+
+			<div class="sirius-select-btn" on:click="toggle()">
+				 <span>▾</span>
+			</div>
+</div>
+	<div class="sirius-select-list" 
+				style="display:{{opened?'block':'none'}}"
+				opened="{{opened}}" 
+				ref:js_select_list 
+				on:keydown='onKeyDown(event)'>
+			<slot>
+				<List items="{{filterItems}}" 
+								on:blur="close()"
+								tabIndex="-1"
+								on:select="onSelect(event)"  />
+			</slot>
+	</div>
+
+<script>
+	import List from './list.html'
+
+	export default {
+		oncreate(){
+			this.selectors = {
+				select_box: 'sirius-list-box',
+				focus: 'sirius-focus'
+			};
+			
+			const {withFilter, items, tabIndex} = this.get();
+			this.set({filterItems: items});	
+			
+			if(!withFilter){
+				this.refs.js_select.setAttribute('tabIndex', 0);
+				this.refs.js_select_input.setAttribute('tabIndex', -1);
+				this.refs.js_select_input.setAttribute('readonly', '');
+			}else{
+				this.refs.js_select.setAttribute('tabIndex', -1);
+				this.refs.js_select_input.setAttribute('tabIndex', 0);
+			}
+		},
+		
+		data(){
+			return{
+				items: [],
+				opened: false,
+				select: {},
+				filter: '',
+				display: '',
+				withFilter: false,
+				filterItems: [],
+				tabIndex: 0,
+				searchAfter: 3,
+			}
+		},
+		components: {
+			List
+		},
+		methods:{
+			open: function(){
+				jSvelte.Select.open.call(this);	
+			},
+			close: function(){
+				jSvelte.Select.close.call(this);	
+			},
+			closeAndFocus:function(){
+				jSvelte.Select.closeAndFocus.call(this);	
+			},
+			toggle:function(){
+				jSvelte.Select.toggle.call(this);	
+			},
+			onSelect:function(event){
+				jSvelte.Select.onSelect.call(this,event);	
+			},
+			onKeyDown:function(event){
+				jSvelte.Select.onKeyDown.call(this, event);	
+			},
+			onKeyUp:function(){
+				jSvelte.Select.onKeyUp.call(this);	
+			},
+			onFocusFilter:function(){
+				jSvelte.Select.onFocusFilter.call(this);	
+			},
+			onBlurFilter:function(){
+				jSvelte.Select.onBlurFilter.call(this);	
+			},
+			filter:function(){
+				jSvelte.Select.filter.call(this);	
+			},
+			getKey:function(){
+				jSvelte.Select.getKey.call(this);	
+			},
+			getText:function(){
+				jSvelte.Select.getText.call(this);	
+			}
+		}
+	}
+</script>
+
