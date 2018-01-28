@@ -1,3 +1,9 @@
+<h1>textbox</h1>
+<TextBox bind:value="test3" name="jjj"/>
+<br>
+<TextBox bind:value="test3"  />
+<h2>{{test3}}</h2>
+<TextBox value="123" type="number"/>
 <h1>select</h1>
 <Select items="{{test2}}"/>
 
@@ -10,16 +16,19 @@
 	// import Select from './compoments/select/select.html'
 	import List from '../src/list.html'
 	import Select from '../src/select.html'
+	import TextBox from '../src/textbox.html'
 	export default {
 		data(){
 			return{
 				test:[1,2,3],
-				test2:['test1','test2','test3']
+				test2:['test1','test2','test3'],
+				test3: '123'
 			}
 		},
 		components: {
 			List,
-			Select
+			Select,
+			TextBox
 		}
 	};
 </script>

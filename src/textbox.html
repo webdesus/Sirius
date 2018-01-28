@@ -1,0 +1,48 @@
+<div 
+	ref:sirius_textbox 
+	class="sirius-textbox">
+	<slot name="prefix">
+	</slot>
+		<input class="sirius-textbox-input"
+					on:focus="onFocusFilter()"
+					on:blur="onBlurFilter()"
+					:disabled
+					bind:value
+					:name
+					:required
+					:placeholder
+					:readonly
+					:tabindex>
+	
+	<slot name="suffix">
+	</slot>
+
+</div>
+<script>
+	export default {
+		oncreate(){
+			this.selectors = {
+				focus: 'sirius-textbox-focus'
+			};
+		},
+		data(){
+			return {
+				disabled: false,
+				type: 'text',
+				required:false,
+				placeholder: '',
+				readonly: false,
+				tabindex: 0,
+				multiple: false
+			}	
+		},
+		methods:{
+			onFocusFilter:function(){
+				jSvelte.Elements.addClassToElement(this.refs.sirius_textbox, this.selectors.focus);	
+			},
+			onBlurFilter:function(){
+				jSvelte.Elements.removeClassToElement(this.refs.sirius_textbox, this.selectors.focus);	
+			}
+		}		
+	}
+</script>
