@@ -1,3 +1,9 @@
+<h1>checkbox</h1>
+<CheckBox bind:checked="test4">test</CheckBox>
+<CheckBox bind:checked="test4">test</CheckBox>
+
+<h1>button</h1>
+<Button>test</Button>
 <h1>textbox</h1>
 <TextBox bind:value="test3" name="jjj"/>
 <br>
@@ -13,22 +19,29 @@
 <List multiple items="{{test}}"/>
 
 <script>
-	// import Select from './compoments/select/select.html'
 	import List from '../src/list.html'
 	import Select from '../src/select.html'
 	import TextBox from '../src/textbox.html'
+	import Button from '../src/button.html'
+	import CheckBox from '../src/checkbox.html'
 	export default {
+		oncreate(){
+			var self = this;
+		},
 		data(){
 			return{
 				test:[1,2,3],
 				test2:['test1','test2','test3'],
-				test3: '123'
+				test3: '123',
+				test4: false
 			}
 		},
 		components: {
 			List,
 			Select,
-			TextBox
+			TextBox,
+			Button,
+			CheckBox
 		}
 	};
 </script>

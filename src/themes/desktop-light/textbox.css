@@ -3,10 +3,11 @@
 	outline: none;
 	min-width: 189px;
 	width: 189px;
-	
-	height: 15px;
+	height: 12px;
 	background-color: white;
-	border:solid 1px lightgray;
+	border: solid 1px lightgray;
+	padding: 1px;
+	padding-top: 2px;
 }
 .sirius-textbox-focus{
 	border: 1px solid #80a0d8;
@@ -14,7 +15,6 @@
 }
 
 .sirius-textbox-input{
-	padding: 1px;
 	display: block;
 	font-size: 12px;
 	outline: none;
@@ -22,5 +22,7 @@
 	width: 100%;
 	background-color: white;
 	color: black;
+	box-sizing: border-box;
+	height: 100%;
 }
 

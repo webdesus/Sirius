@@ -1,0 +1,28 @@
+.sirius-button{
+	display: block;
+	outline: none;
+	width: 100px;
+	height: 17px;
+
+	border: solid 1px gray;
+	color: black;
+	background-color: rgb(241, 240, 240);
+	cursor: pointer;
+	font-size: 12px;
+	
+}
+.sirius-button:focus{
+	border: 1px solid #80a0d8;
+	box-shadow: 0 0 10px #9ecaed;
+}
+.sirius-button:hover{
+	color: black;
+	border: 1px solid #80a0d8;
+	background-color: rgb(202, 200, 200);
+}
+.sirius-button:active{
+	box-shadow: inset 0 1px 10px 0 rgba(0,0,0,0.2);
+}
+.sirius-button:disabled{
+	color:grey;
+}

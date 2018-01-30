@@ -1,0 +1,18 @@
+<button class="sirius-button"
+				:disabled
+				:tabIndex
+				on:click="fire('click')">
+	<slot></slot>
+</button>
+
+<script>
+	export default {
+		data(){
+			return {
+				disabled: false,
+				tabIndex: 0
+			}	
+		}
+	}
+</script>
+

@@ -1,0 +1,57 @@
+.sirius-checkbox {
+	display: flex;
+	-ms-flex-direction: row;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+	
+	width: 189px;
+	outline: none;
+}
+.sirius-checkbox[checked="true"] .sirius-checkbox-box:after {
+	content: '\0056';
+	position: absolute;
+	width: 100%;
+	color: #292727;
+	text-align: center;
+	font-size: 9px;
+	font-weight: 800;
+	margin-top: 1px;
+
+}
+
+.sirius-checkbox:focus .sirius-checkbox-label{
+	border: 1px solid #80a0d8;
+	box-shadow: 0 0 10px #9ecaed;
+}
+.sirius-checkbox-box{
+	display: flex;
+	-ms-flex-direction: row;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+
+	min-height: 11px;
+	min-width: 11px;
+	width: 11px;
+	cursor: pointer;
+	position: relative;
+	background-color: white;
+	border: solid 1px lightgray;
+}
+.sirius-checkbox-label{
+	display: flex;
+	-ms-flex-direction: row;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+
+
+	-webkit-user-select: none;
+	pointer-events: none;
+	width: 100%;
+	margin-left: 2px;
+	border: 1px solid transparent;
+	font-size: 15px;
+}
+

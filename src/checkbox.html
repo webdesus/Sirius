@@ -1,0 +1,38 @@
+<div class="sirius-checkbox" 
+			on:keydown="onKeyDown(event)"	
+			on:click="toggle()"
+			ref:js_checked_box	
+			:checked
+			tabindex="0" >
+	<div class="sirius-checkbox-box"> </div>
+	<div class="sirius-checkbox-label">
+		<slot></slot>
+	</div>
+</div>
+<script>
+	export default {
+		oncreate(){
+				var self= this;
+			this.selectors={
+				checked: 'sirius-checked'		
+			};
+		},
+		data(){
+			return {
+				disabled: false,
+				tabIndex: 0,
+				checked: false
+			}	
+		},
+		methods:{
+			onKeyDown: function(e){
+				jSvelte.CheckBox.onKeyDown.call(this,e);
+			},
+			toggle: function(){
+				jSvelte.CheckBox.toggle.call(this);
+			}
+		}
+	}
+</script>
+
+
